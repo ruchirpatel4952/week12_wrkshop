@@ -1,27 +1,16 @@
-#include <tuple>  // Include the tuple header
+#include <tuple>
 
 class GameEntity {
-private:
-    std::tuple<int, int> position;
-    char type;
-
 public:
-    GameEntity(int x, int y, char type) : position(x, y), type(type) {}
+    GameEntity(int x, int y, char type) : x(x), y(y), type(type) {}
     virtual ~GameEntity() {}  // Virtual destructor
 
-    std::tuple<int, int> getPos() const {
-        return position;
-    }
+    std::pair<int, int> getPos() const { return {x, y}; }
+    char getType() const { return type; }
+    void setPosition(int newX, int newY) { x = newX; y = newY; }
+    void setType(char newType) { type = newType; }
 
-    char getType() const {
-        return type;
-    }
-
-    void setPosition(int x, int y) {
-        position = std::make_tuple(x, y);
-    }
-
-    void setType(char newType) {
-        type = newType;
-    }
+private:
+    int x, y;
+    char type;
 };
