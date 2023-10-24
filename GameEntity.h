@@ -10,6 +10,8 @@ public:
 
     std::pair<int, int> getPos() const { return {x, y}; }
     char getType() const { return type; }
+    int getX() const { return x; }
+    int getY() const { return y; }
     void setPosition(int newX, int newY) { x = newX; y = newY; }
     void setType(char newType) { type = newType; }
 
