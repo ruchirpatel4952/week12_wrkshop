@@ -2,6 +2,8 @@
 
 #include "GameEntity.h"
 
+class Explosion;
+
 class Mine : public GameEntity {
 public:
     // Constructor

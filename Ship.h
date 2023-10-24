@@ -1,4 +1,5 @@
 #include "GameEntity.h"
+#pragma once
 
 class Ship : public GameEntity {
 public:

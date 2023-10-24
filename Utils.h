@@ -1,6 +1,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <tuple>
+#pragma once
 
 class Utils {
 public:
