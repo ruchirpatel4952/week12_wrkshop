@@ -1,8 +1,7 @@
 #pragma once
+#include "Explosion.h"
 
 #include "GameEntity.h"
-
-class Explosion;
 
 class Mine : public GameEntity {
 public:
