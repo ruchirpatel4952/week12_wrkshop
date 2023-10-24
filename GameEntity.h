@@ -1,3 +1,6 @@
+#ifndef GAMEENTITY_H
+#define GAMEENTITY_H
+#pragma once
 #include <tuple>
 
 class GameEntity {
@@ -14,3 +17,4 @@ private:
     int x, y;
     char type;
 };
+#endif // GAMEENTITY_H
