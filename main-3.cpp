@@ -1,5 +1,4 @@
-#include <iostream>
-#include "GameEntity.h"  // Assuming the above classes are in separate header files
+#include "GameEntity.h"
 #include "Effect.h"
 #include "Explosion.h"
 #include "Ship.h"
@@ -9,17 +8,18 @@
 
 int main() {
     Game game;
+    game.addEntity(std::make_shared<Ship>(5, 5));
+    game.addEntity(std::make_shared<Mine>(7, 7));
 
-    // Initialize the game with 5 ships and 3 mines in a 100x100 grid
-    game.initGame(5, 3, 100, 100);
+    game.display();
 
-    // Simulate the game for 10 iterations with a mine distance threshold of 5.0
-    game.gameLoop(10, 5.0);
-
-    // Print the final state of the entities
-    for (auto entity : game.get_entities()) {
-        std::cout << "Entity type: " << entity->getType() << ", Position: (" << std::get<0>(entity->getPos()) << ", " << std::get<1>(entity->getPos()) << ")\n";
+    // Simulate a ship moving into the mine's position, causing an explosion.
+    auto ship = game.getEntityAt(5, 5);
+    if (ship) {
+        ship->move(2, 2);  // Move the ship to (7, 7) where the mine is.
     }
+
+    game.display();
 
     return 0;
 }
