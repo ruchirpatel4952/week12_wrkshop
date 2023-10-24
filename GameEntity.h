@@ -1,3 +1,5 @@
+#include <tuple>  // Include the tuple header
+
 class GameEntity {
 private:
     std::tuple<int, int> position;
@@ -5,7 +7,7 @@ private:
 
 public:
     GameEntity(int x, int y, char type) : position(x, y), type(type) {}
-    virtual ~GameEntity() {}
+    virtual ~GameEntity() {}  // Virtual destructor
 
     std::tuple<int, int> getPos() const {
         return position;
